@@ -1,0 +1,79 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                              MP Candle Size MT5 |
+//|                                        Copyright 2021, forexroboteasy.com |
+//|                                       Developed by Forex Robot Easy Team |
+//+------------------------------------------------------------------+
+
+#property copyright 'Copyright 2021, forexroboteasy.com'
+#property link      'https://www.forexroboteasy.com'
+#property version   '1.0'
+
+//+------------------------------------------------------------------+
+//| Customization Function                                           |
+//+------------------------------------------------------------------+
+void CustomizeCandleColors(color bullishColor, color bearishColor)
+{
+   // Code to customize the colors of bullish and bearish candles
+   // Set the colors of the candles based on the input parameters
+   // For example:
+   color bullishColor = Green;
+   color bearishColor = Red;
+   
+   // Apply the customized colors to the chart
+   // For example:
+   ChartSetInteger(0, CHART_COLOR_CANDLEUP, bullishColor);
+   ChartSetInteger(0, CHART_COLOR_CANDLEDOWN, bearishColor);
+}
+
+//+------------------------------------------------------------------+
+//| Candle Size Oscillator Function                                   |
+//+------------------------------------------------------------------+
+double CalculateCandleSize(double high, double low)
+{
+   // Code to calculate the size of each candle
+   // Calculate the difference between the highest and lowest prices
+   double candleSize = high - low;
+   
+   // Return the candle size value
+   return candleSize;
+}
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Customization options
+   color bullishColor = Green; // Default bullish candle color
+   color bearishColor = Red; // Default bearish candle color
+   
+   // Customize the colors of bullish and bearish candles
+   CustomizeCandleColors(bullishColor, bearishColor);
+   
+   return INIT_SUCCEEDED;
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Code to handle deinitialization, if required
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Code to execute on each tick, if required
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnStart()
+{
+   // Code to execute on start, if required
+}
